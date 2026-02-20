@@ -1,5 +1,7 @@
 <div align="center">
+
 ![Screenshot](screenshot.png)
+
 </div>
 
 # Daily Quote Generator
