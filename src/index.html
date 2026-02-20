@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Quote Generator</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=ranade@1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 id="title">Daily Quote Generator</h1>
+
+      <div class="quote">
+        <p class="hidden" id="line"></p>
+        <p class="hidden" id="author"></p>
+        <span class="hidden" id="tip">Click the button below to get a quote!</span>
+      </div>
+
+      <div class="panel">
+        <button id="generate" onclick="generateQuote()">Get Your Quote!</button>
+      </div>
+    </div>
+  </body>
+
+  <script src="./index.js"></script>
+</html>
