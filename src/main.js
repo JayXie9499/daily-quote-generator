@@ -1,7 +1,9 @@
-const quoteBox = document.querySelector("div.quote");
-const quoteLine = quoteBox.querySelector("p#line");
-const quoteAuthor = quoteBox.querySelector("p#author");
-const quoteTip = quoteBox.querySelector("span#tip");
+import "./style.css";
+
+let quoteBox;
+let quoteLine;
+let quoteAuthor;
+let quoteTip;
 
 async function generateQuote() {
 	const res = await fetch("https://dummyjson.com/quotes/random");
@@ -28,6 +30,29 @@ function updateQuote(quote) {
 }
 
 window.onload = () => {
+	document.querySelector("#app").innerHTML = `
+  <div class="container">
+    <h1 id="title">Daily Quote Generator</h1>
+  
+    <div class="quote">
+      <p class="hidden" id="line"></p>
+      <p class="hidden" id="author"></p>
+      <span class="hidden" id="tip">
+        Click the button below to get a quote!
+      </span>
+    </div>
+  
+    <div class="panel">
+      <button id="generate">Get Your Quote!</button>
+    </div>
+  </div>
+  `;
+	document.getElementById("generate").onclick = generateQuote;
+
+	quoteBox = document.querySelector("div.quote");
+	quoteLine = quoteBox.querySelector("p#line");
+	quoteAuthor = quoteBox.querySelector("p#author");
+	quoteTip = quoteBox.querySelector("span#tip");
 	const rawQuote = localStorage.getItem("quote");
 
 	if (!rawQuote) {
